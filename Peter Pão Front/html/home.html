@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Home</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body class="row">
+        <div class=" col-md-3 gambi">    
+           <div class="conteinerMenu">
+            <table class="imgcontainer">
+                <tr>
+                    <td style="width: 30%"><img src="../Img/paoIcon.png" alt="logo" class="logo"></td>
+                    <td> <h3> Peter Pão </h3> </td>
+                </tr>
+               </table>
+             <div class="vertical-menu">
+                <a href="#" class="active"> <i class="fa fa-home" style="font-size:24px; padding-right:10px" ></i> Home </a>
+                <a href="#" onclick="window.location.replace('clientes.html')"> <i class="fa fa-users" style="font-size:24px; padding-right:10px"></i>   Clientes </a>
+                <a href="#" onclick="window.location.replace('encomendas.html')"><i class="fa fa-book"style="font-size:24px; padding-right:10px"></i>  Encomendas</a>
+                <a href="#" onclick="window.location.replace('vendas.html')"><i class="fa fa-shopping-basket"style="font-size:24px; padding-right:10px"></i>  Vendas</a> 
+                <a href="#" onclick="window.location.replace('estoque.html')"><i class="fa fa-archive"style="font-size:24px; padding-right:10px"></i>   Estoque</a> 
+                </div>
+               <div class="vertical-menuGerente">
+                <a href="#" onclick="window.location.replace('funcionarios.html')"> <i class="fa fa-user" style="font-size:24px; padding-right:10px"></i>   Funcionários </a>
+                <a href="#"  onclick="window.location.replace('relatorio.html')"><i class="fa fa-clipboard"style="font-size:24px; padding-right:10px"></i>  Gerar Relatório</a>
+                </div>
+               <table id="rodape">
+                <tr>
+                    <td> Capitão Gancho</td>
+
+                </tr>
+                <tr>
+                    <td> Tipo: Funcionário</td>
+                </tr>
+                <tr>
+                    <td> Data: <script language=javascript type="text/javascript">
+                   now = new Date
+                   document.write (now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() )
+               </script></td>
+                     <td style="text-align: right"> <button class="botaoSair" onclick="window.location.replace('login.html')"><i class="fa fa-sign-out"style="font-size:40 px; padding-right:10px"></i>Sair </button></td>
+                </tr>   
+               </table> 
+
+              <!-- <input type="image" src="exit.png" name="exitButton" class="exitB" alt="Submit" width="20%" height="auto">-->
+            </div>
+        
+        </div>
+            <div class="col-md-9  gambi">
+                <div class="conteiner">
+                <h2>Bem Vindo, Capitão Gancho</h2>
+                    <h3 class="dia"> Hoje é <script language=javascript type="text/javascript">
+                   now = new Date
+                    mlist = [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ];
+                    slist = [ "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];    
+                   document.write (slist[now.getDay()] + ", " +  now.getDate() + " de " + (mlist[now.getMonth()]) + " de " + now.getFullYear());
+               </script></h3>
+                    <h3 class="dia"> Acesso iniciado às <script language=javascript type="text/javascript">
+                   now = new Date;   
+                   document.write (now.getHours() + "h " + now.getMinutes());
+               </script></h3>
+                    <h4>Próximas Encomendas</h3>
+                    <div class="encomendasC">
+                        <table id="tabelaConteudo">
+                          <tr>
+                            <th>Cliente</th>
+                            <th>CPF</th>
+                            <th>Data do Pedido</th>
+                            <th>Data da Entrega</th>
+                            <th>Valor Total</th>    
+                          </tr>
+                          <tr>
+                            <td>Tinker Bell</td>
+                            <td>098.123.546-42</td>
+                            <td>01/04/2018</td>
+                            <td>01/05/2018</td>
+                            <td>R$ 45,00</td>   
+                          </tr>
+                          <tr>
+                            <td>Wendy</td>
+                            <td>038.456.234-78</td>
+                            <td>20/04/2018</td>
+                            <td>01/05/2018</td>
+                            <td>R$ 170,00</td>   
+                          </tr>
+                             <tr>
+                            <td>Sr. Smee</td>
+                            <td>458.467.908-00</td>
+                            <td>30/04/2018</td>
+                            <td>01/05/2018</td>
+                            <td>R$ 370,00</td>   
+                          </tr>
+                        </table>
+                    </div>
+                </div>   
+            </div>
+    </body>
+</html>

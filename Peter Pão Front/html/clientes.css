@@ -1,0 +1,651 @@
+@font-face {
+   font-family: geral;
+   src: url(RobotoCondensed-Regular.ttf);
+
+}
+body{
+    background-image: url("../Img/fundo.png");
+    margin-left: none;
+    margin-right: none;
+    vertical-align: middle;
+    width: 100vw;
+    overflow: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: geral;
+    height: 100vh;
+    background-attachment: fixed;
+}
+@media (min-aspect-ratio: 2/1) {
+    body {
+        background-size: 150vw auto;
+    }
+}
+
+@media (max-aspect-ratio: 2/1) {
+    body {
+        background-size: auto 150vh;
+    }
+}
+
+.row{
+    padding-left: 10pt;
+    padding-right: 10pt;
+    font-family: geral;
+}
+.gambi{
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    padding-right: 0pt;
+    font-family: geral;
+
+}
+/*-----------------Conteiner Menu vertical------------------*/
+.conteinerMenu{
+    background-color: #777;
+    width: 100%; /* Set a width if you like */
+   /* height: 500px;*/
+    margin: 0 0 0 0;
+    height: 100%;
+    font-family: geral;
+   
+}
+#rodape {
+    color: white;
+    font-size: 1em;
+    margin-left: 5%;
+    width: 95%;
+    margin-top: 5%;
+    font-family: geral;
+    
+}
+.botaoSair{
+    color: white;
+    background: none;
+    border: none;
+    
+}
+.botaoSair:hover{
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*-----------------Menu vertical------------------*/
+.vertical-menu {
+    width: 100%; /* Set a width if you like */
+   /* height: 500px;*/
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+    font-family: geral;
+}
+
+.vertical-menu a {
+    background-color: #777; /* Grey background color */
+    display: block; /* Make the links appear below each other */
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+    text-decoration: none;
+    color: white;
+}
+
+.vertical-menu a.active {
+    background-color: #ff9600;
+    color: white;
+    text-decoration: none;
+}
+
+/*-----------------Logo------------------*/
+.imgcontainer {
+    overflow: auto;
+    text-align:left;
+}
+
+/* Avatar image */
+.logo {
+    height: auto;
+    overflow: auto;
+    margin: 5pt 25% 0 25%;
+    width: 90%;
+
+}
+@font-face {
+   font-family: peter;
+   src: url(Merienda-Regular.ttf);
+
+}
+.imgcontainer h3{
+ font-family: peter;
+    overflow-wrap: break-word;
+    color: white;
+    font-size: 2em;
+ 
+}
+.imgcontainer td {
+    text-align: center;
+  
+}
+
+/*-----------------Conteiner------------------*/
+.conteiner{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding-bottom: 10pt;
+    position: static;
+    overflow: auto;
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 95% 5%;
+}
+
+.conteiner h2{
+    color: #ff8600;
+    text-decoration: underline;
+    padding: 15px;
+    margin-left: 15px;
+    font-size: 2em;
+}
+.conteiner h3{
+    color: black;
+    padding: 15px;
+    margin-left: 15px;
+    margin-top: 5%;
+    font-size: 1.8em;
+}
+
+/*-----------------Menu vertical Gerente------------------*/
+.vertical-menuGerente {
+    width: 100%; /* Set a width if you like */
+   /* height: 500px;*/
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+    /*display:*/
+}
+
+.vertical-menuGerente a {
+    background-color: #777; /* Grey background color */
+    display: block; /* Make the links appear below each other */
+    padding-top: 18px;
+    padding-right: 30px;
+    padding-bottom: 18px;
+    padding-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    
+}
+
+.vertical-menuGerente a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+    text-decoration: none;
+    color: white;
+}
+.vertical-menuGerente a.active {
+    background-color: #ff9600;
+    color: white;
+    text-decoration: none;
+}
+/*-----------------Caixa de conteúdo------------------*/
+.conteudo{
+    margin: 8% 5% auto;
+    height: 70%;
+    background-color: white;
+    border: 1px solid #000;
+    position: static;
+    overflow: auto;
+}
+/*-----------------Menu Consultar Adicionar------------------*/
+.botao {
+    height: 100%;
+}
+#menuTabela td.botao {
+    height: 20%;
+    vertical-align: top;    
+}
+#menuTabela td.botao.active  {
+    background-color: #e5e5e5;
+}
+#menuTabela td a {
+    display: inline-block; /* Make the links appear below each other */
+    height: 100%;
+    padding: 30px 30px 18px 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: black;    
+}
+#menuTabela tr{
+    height: 20%;
+}
+#menuTabela {
+    height: 100%;
+    overflow: auto;
+}
+
+#menuTabela td a:hover {
+    background-color: #777; /* Dark grey background on mouse-over */
+    text-decoration: none;
+    color: white;
+}
+ #menuTabela a.active {
+    background-color: #e5e5e5;
+    color: black;
+    text-decoration: none;
+    border-right: none;
+}
+/*-----------------Conteiner onde vai ficar o consultar------------------*/
+#consultar {
+    background-color: #e5e5e5;
+    width: 100%;
+    height: 100%;
+    padding: 5% 2% 2% 0;
+    position: relative;
+    /*display: none;*/
+    overflow: auto;
+
+}
+.busca {
+    position: relative;
+    text-align: right;
+    margin: 0 0 3% 0;
+}
+#buscaOp{
+    border: 1px solid #ccc;
+    background-color: white;
+    margin: 0 5px 0 0;
+  
+}
+.busca input[type=text]{
+    border-radius: 3px;
+    box-shadow: inset 0;
+    border: 1px solid #ccc;
+}
+.busca input[type=date] {
+    border-radius: 3px;
+    box-shadow: inset 0;
+    border: 1px solid #ccc;
+    width: 20%;
+    margin: 0 5px 0 5px;
+    padding: 0;
+ 
+} 
+/*-----------------Tabela de consultar------------------*/
+#tabelaConsultar, #tabelaProducao{
+    border-collapse: collapse;
+    width:  95%;
+    height: auto;
+    border: 1px solid #aaa;
+    margin: 0 0 0 5%;
+    text-align: center;
+    overflow: auto;
+    word-break:normal;
+}
+#tabelaConsultar th, #tabelaProducao th {
+    border: 1px solid #aaa;
+    text-align: center;
+    padding: 8px;
+    background-color: #e5e5e5;
+} 
+
+#tabelaConsultar tr:nth-child(even), #tabelaProducao tr:nth-child(even){
+    background-color: #e2e2c2;
+}
+#tabelaConsultar tr:nth-child(odd) , #tabelaProducao tr:nth-child(odd){
+    background-color: white;
+}
+.edit{
+    background-color: #4CAF50;
+    margin: 20% 20% 20% 20%;
+    box-shadow: 1px 1px #999;
+    border: none;
+}
+.edit:hover{
+    color: white;
+    cursor: pointer;
+}
+/*-----------------Conteiner onde vai ficar o Adicionar------------------*/
+#adicionar , #producao, #consultarProd, #adicionar2{
+    background-color: #e5e5e5;
+    width: 100%;
+    height: 100%;
+    padding: 5% 3% 2% 2%;
+    position: relative;
+    display: none;
+    overflow: auto;
+}
+#adicionar  input[type=text], input[type=number], input[type=password], input[type=tel], input[type=date] {
+    width: 100%;
+    height: 80%;
+    margin: 0 0 2% 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    vertical-align: middle;
+    padding: 2% 2% 2% 2%;
+}
+#adicionar button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    box-shadow: 2px 2px #999;
+}
+
+/* Add a hover effect for buttons */
+#adicionar  button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: 20%;
+    padding: 14px 20px;
+    background-color: #f44336;
+    color: white;
+}
+#formulario td{
+    width: 35%;
+    margin: 2% 0 0 2%;
+    padding: 0 2% 1% 2%;
+}
+#formulario{
+    width: 100%;
+    overflow: auto;
+  
+}
+#formulario .titulo{
+    margin: 0 0 0 2%;
+    
+}
+#adicionar .botoes{
+    width: 100%;
+    text-align: right;
+    margin: 14% 0 0 0;
+    padding: 0 1% 0 0;
+}
+/*-----------------Conteiner onde vai ficar o Alterar------------------*/
+#alterar{
+    background-color: #e5e5e5;
+    width: 100%;
+    height: 100%;
+    padding: 2% 3% 2% 2%;
+    position: relative;
+    display: none;
+    overflow: hidden;
+}
+#alterar  input[type=text], input[type=tel] {
+    width: 100%;
+    height: 80%;
+    margin: 0 0 2% 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    vertical-align: middle;
+    padding: 2% 2% 2% 2%;
+}
+#alterar button[type=submit], #consultarProd button[type=submit]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 0 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    box-shadow: 2px 2px #999;
+}
+
+/* Add a hover effect for buttons */
+#alterar  button:hover, #consultarProd button:hover {
+    opacity: 0.8;
+}
+#alterar h3{
+    margin: 0 0 5% 3%;
+    padding: 0;
+    color:  #ff8600;
+    text-decoration: underline;
+}
+.botoes{
+    width: 100%;
+    text-align: right;
+    margin: 7% 0 0 0;
+    padding: 0 1% 0 0;
+
+}
+.voltar {
+    width: 10%;
+    height: 5%;
+    padding: 0 10px 0  10px;
+    background-color: #ff8600;
+    margin: 0 0 0 0;
+    vertical-align: bottom;     
+}
+/*-----------------Cargo funcionário------------------*/
+#setCargo {
+    width: 100%;
+    height: 80%;
+    margin: 0 0 1% 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    vertical-align: middle;
+    padding: 2% 2% 2% 2%;
+    background-color: white;
+}
+/*-----------------Produtos no Consultar Vendas e Encomendas------------------*/
+.prod{
+    background: none;
+    margin: 10% 10% 10% 10%;
+    border: none;
+    overflow: auto;
+}
+.prod:hover{
+    color: white;
+    cursor: pointer;
+}
+#listaProd {
+    color: black;
+}
+.produtos{
+    width: 100%;
+    border: 1px solid #aaa;
+    overflow: auto;
+}
+.produtos th {
+    border: 1px solid #aaa;
+    text-align: center;
+    padding: 8px;
+    background-color: #e5e5e5;
+} 
+
+.produtos tr:nth-child(even) {
+    background-color: #e2e2c2;
+}
+.produtos tr:nth-child(odd) {
+    background-color: white;
+}
+#pago{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+/*-----------------Produtos no Adicionar Encomendas------------------*/
+.prodConsul{
+    width: 100%;
+    border: 1px solid #aaa;
+    overflow: auto;
+    text-align: center;
+}
+.prodConsul th {
+    border: 1px solid #aaa;
+    text-align: center;
+    background-color: #e5e5e5;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 0 10px 0 10px;
+} 
+
+.prodConsul tr:nth-child(even) {
+    background-color: #e2e2c2;
+    text-align: center;
+}
+.prodConsul tr:nth-child(odd) {
+    background-color: white;
+    text-align: center;
+}
+.cancelar{
+    background: none;
+    color: red;
+    text-align: center;
+    border: none;
+    width: auto;
+}
+.cancelar:hover{
+    cursor: pointer;
+}
+#adicionar button[type=addProd], #alterar button[type=addProd]{
+    width: 100%;
+    font-size: 14pt;
+    background-color: #ff8600;
+    color: white;
+    padding: 7px;
+}
+#adicionar p, #alterar p{
+    font-size: 15pt;
+    margin-left: 7px;
+}
+#consultarProd h3{
+    margin: 0 0 2% 3%;
+    padding: 0;
+    color:  #ff8600;
+    text-decoration: underline;
+}
+/*-----------------Produtos no Add EStoque------------------*/
+.plus{
+    background-color: #ff8600;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px #999;
+    padding-top: 2px;
+    margin: 5px;
+}
+#addEstoque {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    vertical-align: middle;
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */;
+}
+.coisoAdd{
+    background-color: #fefefe;
+    margin: auto;
+    vertical-align: middle;
+    padding: 0 20px 20px 20px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
+}
+.close {
+    color: #f44336;
+    float: right ;
+    font-size: 28px;
+    opacity: none;
+}
+.close:hover{
+    color: #f44336;
+    text-decoration: none;
+    cursor: pointer;
+}
+#addEstoque label{
+    margin: 20px 0 10px 0;
+}
+#addEstoque button[type=submit]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 0 0 0 0%;
+    border: none;
+    word-break: break-all;
+    cursor: pointer;
+    width: 30%;
+    box-shadow: 2px 2px #999;
+    vertical-align: bottom;
+    
+}
+#addEstoque input[type=number]{
+    width: 100%;
+}
+/*-----------------Produção------------------*/
+#addEstoque input[type=checkbox]{
+    vertical-align:bottom;
+    float: right;
+    margin-left: 15px;
+}
+#checkProd{
+    float: left;
+    position: fixed;
+    top: 150pt;
+    left: 375pt;
+}
+/*----------------Gerar Relatório---------------*/
+#consultar h3, #adicionar2 h3{
+    margin: 0 0 5% 3%;
+    padding: 0;
+    color:  #ff8600;
+    text-decoration: underline;
+}
+#relatorio {
+    width: 80%;
+    margin-left: 3%;
+    padding: 10px;
+    vertical-align: middle; 
+    overflow: auto;
+}
+
+#relatorio td{
+    padding: 5px;
+}
+#relatorio input[type=date]{
+    width: 80%;
+}
+.botaoRelatorio{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0 0 10%;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    box-shadow: 2px 2px #999;
+    font-size: 12pt;
+}
+
+/* Add a hover effect for buttons */
+#relatorio  button:hover{
+    opacity: 0.8;
+}
+
+.treco{
+    color: white;
+    background-color: dodgerblue;
+    border: none;
+}

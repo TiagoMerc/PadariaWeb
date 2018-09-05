@@ -1,0 +1,220 @@
+@font-face {
+   font-family: geral;
+   src: url(RobotoCondensed-Regular.ttf);
+
+}
+body{
+    background-image: url("../Img/fundo.png");
+    margin-left: none;
+    margin-right: none;
+    vertical-align: middle;
+    width: 100vw;
+    overflow: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: geral;
+    height: 100vh;
+}
+@media (min-aspect-ratio: 2/1) {
+    body {
+        background-size: 150vw auto;
+    }
+}
+
+@media (max-aspect-ratio: 2/1) {
+    body {
+        background-size: auto 150vh;
+    }
+}
+
+.row{
+    padding-left: 10pt;
+    padding-right: 10pt;
+    font-family: geral;
+}
+.gambi{
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    padding-right: 0pt;
+    font-family: geral;
+}
+/*-----------------Conteiner Menu vertical------------------*/
+.conteinerMenu{
+    background-color: #777;
+    width: 100%; /* Set a width if you like */
+   /* height: 500px;*/
+    overflow: auto;
+    margin: 0 0 0 0;
+    height: 100%;
+    font-family: geral
+   
+}
+#rodape {
+    overflow: auto;
+    color: white;
+    font-size: 1em;
+    margin-left: 5%;
+    width: 95%;
+    
+}
+.botaoSair{
+    color: white;
+    background: none;
+    border: none;
+    
+}
+.botaoSair:hover{
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*-----------------Menu vertical------------------*/
+.vertical-menu {
+    width: 100%; /* Set a width if you like */
+   /* height: 500px;*/
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+    font-family: geral
+}
+
+.vertical-menu a {
+    background-color: #777; /* Grey background color */
+    display: block; /* Make the links appear below each other */
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+    text-decoration: none;
+    color: white;
+}
+
+.vertical-menu a.active {
+    background-color: #ff9600;
+    color: white;
+    text-decoration: none;
+}
+
+/*-----------------Logo------------------*/
+.imgcontainer {
+    overflow: auto;
+    text-align:left;
+}
+
+/* Avatar image */
+.logo {
+    height: auto;
+    overflow: auto;
+    margin: 5pt 25% 0 25%;
+    width: 90%;
+
+}
+@font-face {
+   font-family: peter;
+   src: url(Merienda-Regular.ttf);
+
+}
+.imgcontainer h3{
+ font-family: peter;
+    overflow-wrap: break-word;
+    color: white;
+    font-size: 2em;
+ 
+}
+.imgcontainer td {
+    text-align: center;
+  
+}
+
+/*-----------------Conteiner------------------*/
+.conteiner{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding-bottom: 10pt;
+    position: static;
+    overflow: auto;
+    background-image: url("../Img/bread2.png");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 95% 5%;
+    font-family: geral;
+}
+.conteiner h2{
+    color: #ff8600;
+    text-decoration: underline;
+    padding: 15px;
+    margin-left: 15px;
+    font-size: 2em;
+}
+.conteiner h4{
+    color: black;
+    padding: 15px;
+    margin-left: 15px;
+    margin-top: 5%;
+    font-size: 1.8em;
+}
+.conteiner h3{
+    color: black;
+    padding-left: 15px;
+    margin-left: 15px;
+    font-size: 1.8em;
+}
+#tabelaConteudo {
+    font-family: geral, arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    border: 2px solid #888;
+    margin-left: 3%;
+    padding: 20px;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+
+#tabelaConteudo td, th {
+    text-align: left;
+    padding: 8px;
+    overflow: auto;
+}
+
+#tabelaConteudo tr:nth-child(even) {
+    background-color: #e2e2c2;
+}
+
+/*-----------------Menu vertical Gerente------------------*/
+.vertical-menuGerente {
+    width: 100%; /* Set a width if you like */
+   /* height: 500px;*/
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+    /*display:*/
+}
+
+.vertical-menuGerente a {
+    background-color: #777; /* Grey background color */
+    display: block; /* Make the links appear below each other */
+    padding-top: 18px;
+    padding-right: 30px;
+    padding-bottom: 18px;
+    padding-left: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    
+}
+
+.vertical-menuGerente a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+    text-decoration: none;
+    color: white;
+}

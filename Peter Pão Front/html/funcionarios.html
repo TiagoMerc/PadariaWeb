@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Funcionários</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="clientes.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body class="row">
+        <div class=" col-md-3 gambi">    
+           <div class="conteinerMenu">
+            <table class="imgcontainer">
+                <tr>
+                    <td style="width: 30%"><img src="../Img/paoIcon.png" alt="logo" class="logo"></td>
+                    <td> <h3> Peter Pão </h3> </td>
+                </tr>
+               </table>
+             <div class="vertical-menu">
+                <a href="#" onclick="window.location.replace('home.html')"> <i class="fa fa-home" style="font-size:24px; padding-right:10px" ></i> Home </a>
+                <a href="#" onclick="window.location.replace('clientes.html')"> <i class="fa fa-users" style="font-size:24px; padding-right:10px"></i>   Clientes </a>
+                <a href="#" onclick="window.location.replace('encomendas.html')"><i class="fa fa-book"style="font-size:24px; padding-right:10px"></i>  Encomendas</a>
+                <a href="#" onclick="window.location.replace('vendas.html')"><i class="fa fa-shopping-basket"style="font-size:24px; padding-right:10px"></i>  Vendas </a> 
+                <a href="#" onclick="window.location.replace('estoque.html')"><i class="fa fa-archive"style="font-size:24px; padding-right:10px"></i>   Estoque</a> 
+                </div>
+               <div class="vertical-menuGerente" >
+                <a href="#" class="active" > <i class="fa fa-user" style="font-size:24px; padding-right:10px"></i>   Funcionários </a>
+                <a href="#"  onclick="window.location.replace('relatorio.html')"><i class="fa fa-clipboard"style="font-size:24px; padding-right:10px"></i>  Gerar Relatório</a>
+                </div>
+               <table id="rodape">
+                <tr>
+                    <td> Capitão Gancho</td>
+
+                </tr>
+                <tr>
+                    <td> Tipo: Funcionário</td>
+                </tr>
+                <tr>
+                    <td> Data: <script language=javascript type="text/javascript">
+                   now = new Date
+                   document.write (now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() )
+               </script></td>
+                     <td style="text-align: right"> <button class="botaoSair" onclick="window.location.replace('login.html')"><i class="fa fa-sign-out"style="font-size:40 px; padding-right:10px"></i>Sair </button></td>
+                </tr>   
+               </table> 
+
+              <!-- <input type="image" src="exit.png" name="exitButton" class="exitB" alt="Submit" width="20%" height="auto">-->
+            </div>
+        <script>
+            function change(x){
+               if(x === "consultar"){
+                   document.getElementById("consultar").style.display = 'block';
+                   document.getElementById("adicionar").style.display = 'none';
+                   document.getElementById("alterar").style.display = 'none';
+                   document.getElementById("consul").className = "botao active";
+                   document.getElementById("add").className = "botao";
+                   
+                }else if(x === "adicionar"){
+                    document.getElementById("adicionar").style.display = 'block';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("alterar").style.display = 'none';
+                    document.getElementById("consul").className = "botao";
+                   document.getElementById("add").className = "botao active";
+                }else if(x === "alterar"){
+                    document.getElementById("alterar").style.display = 'block';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("adicionar").style.display = 'none';
+                }
+                
+            }
+            </script>
+        </div>
+            <div class="col-md-9  gambi">
+                <div class="conteiner" style="background-image: url('../Img/chef.png');">
+                <h2>Funcionários</h2>
+                    <div class="conteudo">
+                       <table id="menuTabela">
+                            <tr>
+                                <td id="consul" class="botao active"> <a href="#" onclick="change('consultar')"> Consultar</a></td>
+                                <td rowspan="7" style = "width: 100%"> 
+                                    <div id="consultar">
+                                        <div class="busca">
+                                          <input type="text" placeholder="buscar por.." maxlength="50" name="search">
+                                          <select id="buscaOp" name="buscaOp">
+                                          <option value="text">CPF</option>
+                                          <option value="text">Nome</option>
+                                          <option value="text">Cargo</option>
+                                        </select>
+                                        </div>
+                                        <table id="tabelaConsultar">
+                                          <tr>
+                                            <th>CPF</th>
+                                            <th>Nome</th>
+                                            <th>Cargo</th>
+                                            <th>Salário</th>  
+                                            <th></th> 
+                                          </tr>
+                                          <tr>
+                                            <td>455.234.678-23</td>
+                                            <td>Peter Pan</td>
+                                            <td>Gerente</td>
+                                            <td>10.000,00</td> 
+                                            <td> <button class= "edit" type="edit" onclick="change('alterar')"> <i class="material-icons" style="color:white; font-size: 10pt">edit</i> </button></td>  
+                                          </tr>
+                                          <tr>
+                                            <td>345.688.123-54</td>
+                                            <td>Capitão Gancho</td>                          
+                                            <td>Funcionário</td>
+                                            <td>4.000,00</td> 
+                                            <td> <button class= "edit" type="edit" onclick="change('alterar')"> <i class="material-icons" style="color:white; font-size: 10pt;">edit</i> </button></td>    
+                                          </tr>
+                                             <tr>
+                                            <td>562.876.578-11</td>
+                                            <td>Sr. Smee</td>                             
+                                            <td>Padeiro</td>
+                                            <td>4.000,00</td> 
+                                            <td> <button class= "edit" type="edit"onclick="change('alterar')"> <i class="material-icons" style="color:white; font-size: 10pt;">edit</i> </button></td>       
+                                          </tr>
+                                        </table>
+                                    </div>
+                                    <div id="adicionar">
+                                        <form method="post">
+                                             <div class="containerBox">
+                                                 <table id="formulario">
+                                                    <tr>
+                                                     <td>
+                                                        <label for="cpf" class="titulo"><b>    CPF </b></label>
+                                                        <input type="text"  id="cpf_add" oninput="cpf_replace(this.form.cpf_add.value,'cpf_add')" placeholder="xxx.xxx.xxx-xx" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="CPF tem 11 dígitos (Digite apenas números)" maxlenght="15" required autofocus >
+                                                        </td>
+                                                    <td>
+                                                        <label for="cargo" class="titulo"> <b>   Cargo    </b></label>
+                                                        <select id="setCargo" name="setCargo">
+                                                          <option value="text">Funcionário</option>
+                                                          <option value="text">Padeiro</option>
+                                                          <option value="text">Gerente</option>
+                                                        </select>
+                                                    </td>    
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td>
+                                                         <label for="nome" class="titulo"><b>  Nome  </b></label>
+                                                        <input type="text" placeholder="Nome" maxlength="50" name="nome" required>
+                                                         </td>
+                                                         <td>
+                                                             <label for="salario" class="titulo"> <b>  Salário    </b></label>
+                                                             <input type="number" placeholder="xxxx,xx" required>                       
+                                                         </td>
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td>
+                                                            <label for="sanha" class="titulo"> <b>  Senha  </b></label>
+                                                            <input type="password" placeholder="senha" required>
+                                                         </td>
+                                                     </tr>
+                                                 </table>
+                                              </div>
+                                            <div class="botoes">
+                                                <button type="reset" class="cancelbtn">Limpar</button>
+                                                <button type="submit">Adicionar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="alterar">
+                                        <h3>Alterar Dados</h3>
+                                        <form onsubmit="change('consultar')" method="post">
+                                             <div class="containerBox">
+                                                 <table id="formulario">
+                                                     <tr>
+                                                     <td>
+                                                        <label for="cpf" class="titulo"><b>    CPF </b></label>
+                                                        <input type="text"  id="cpf_alt" oninput="cpf_replace(this.form.cpf_alt.value,'cpf_alt')" placeholder="xxx.xxx.xxx-xx" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="CPF tem 11 dígitos (Digite apenas números)" maxlenght="15" required autofocus >
+                                                        </td>
+                                                    <td>
+                                                        <label for="cargo" class="titulo"> <b>   Cargo    </b></label>
+                                                        <select id="setCargo" name="setCargo">
+                                                          <option value="text">Funcionário</option>
+                                                          <option value="text">Padeiro</option>
+                                                          <option value="text">Gerente</option>
+                                                        </select>
+                                                    </td>    
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td>
+                                                         <label for="nome" class="titulo"><b>  Nome  </b></label>
+                                                        <input type="text" placeholder="Nome" maxlength="50" name="nome_alt" required>
+                                                         </td>
+                                                         <td>
+                                                             <label for="salario" class="titulo"> <b>  Salário    </b></label>
+                                                             <input type="number" placeholder="xxxx,xx" required>                       
+                                                         </td>
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td>
+                                                            <label for="sanha" class="titulo"> <b>  Senha  </b></label>
+                                                            <input type="password" placeholder="senha" required>
+                                                         </td>
+                                                     </tr>
+                                                 </table>
+                                              </div>
+                                            <div class="botoes">
+                                                <button type="voltar" class="voltar"><i class="material-icons" style="color:white; font-size: 30pt">keyboard_return</i></button>
+                                                <button type="submit">Confirmar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td id="add" class="botao"> <a href="#" onclick="change('adicionar')"> Adicionar</a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"  style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                        </table>
+                    </div>
+                </div>   
+            </div>
+    </body>
+</html>
+
+<script>
+    function cpf_replace(pCpf, id_form){
+        var cpf = pCpf.toString()
+
+        cpf = cpf.replace(/[\W\s\._\-]+/g, ''); //para retirar caracteres especiais
+        cpf = cpf.replace(/[A-z.]+/, ''); //para retirar letras
+
+        //vetor que recebera cada parte do cpf
+        var tokens = [];
+
+        //tamanho atual do input
+        var tamanho = cpf.length;
+
+        //retirar cada parte do cpf
+        for(var i = 0; (i < tamanho) && (i < 9); i+= 3){
+            tokens.push(cpf.substr(i, 3));
+        }
+
+        //processo de inserção e pontos e traços
+        if(tamanho > 9){
+            var que = cpf.substr(i, 2);
+            cpf = tokens.join(".");
+            cpf = cpf + "-" + que;
+        }else{
+            cpf = tokens.join(".");
+        }
+
+        //substitui no input
+        document.getElementById(id_form).value = cpf
+    }
+    
+    function tel_replace(pTel, id_form){
+        var tel = pTel.toString()
+
+        tel = tel.replace(/[\W\s\._\-]+/g, ''); //para retirar caracteres especiais
+        tel = tel.replace(/[A-z.]+/, ''); //para retirar letras
+
+        //vetor que recebera cada parte do telefone
+        var tokens = [];
+
+        //tamanho atual do input
+        var tamanho = tel.length;
+        
+        if(tamanho > 2){
+            var ddd = tel.substr(0, 2); //ddd
+            var parte; //define o tamanho da parte para número de 8 ou 9 dígitos
+            
+            if(tamanho < 11){
+                parte = 4;
+            }else{
+                parte = 5;
+            }
+            
+            //retirar cada parte do telefone
+            for(var i = 2; (i < tamanho) && (i < 10); i+= parte){
+                tokens.push(tel.substr(i, parte));
+                parte = 4;
+            }
+            
+            //junção
+            tel = "(" + ddd + ")" + tokens.join("-");
+        }
+
+        //substitui no input
+        document.getElementById(id_form).value = tel
+    }
+    
+    function cep_replace(pCep, id_form){
+        var cep = pCep.toString()
+
+        cep = cep.replace(/[\W\s\._\-]+/g, ''); //para retirar caracteres especiais
+        cep = cep.replace(/[A-z.]+/, ''); //para retirar letras
+
+        //tamanho atual do input
+        var tamanho = cep.length;
+        
+        //tratamento cep
+        if(tamanho > 5){
+            var tokens = [];
+            tokens.push(cep.substr(0, 5));
+            tokens.push(cep.substr(5, 3));
+            cep = tokens.join("-");
+        }
+
+        //substitui no input
+        document.getElementById(id_form).value = cep
+    }
+</script>
