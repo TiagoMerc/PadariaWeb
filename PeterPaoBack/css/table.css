@@ -1,0 +1,65 @@
+/*
+ * Table styles
+ */
+table.dataTable {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
+  /*
+   * Header and footer styles
+   */
+  /*
+   * Body styles
+   */ }
+/*Título da tabela*/
+table.dataTable thead th,
+  table.dataTable thead td {
+    padding: 8px;
+    border-bottom: 1px solid #888; 
+}
+/**/
+.dataTables_wrapper .dataTables_length {
+    float: left; 
+    margin-left: 3%;
+}
+  .dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right; }
+    .dataTables_wrapper .dataTables_filter input {
+      margin-left: 0.5em; }
+  .dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    margin-left: 3%;  
+    padding-top: 0.755em; }
+  .dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0.25em; }
+
+/*Cor do hover dos botões da paginação*/
+ .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: black !important;
+    border: 1px solid #e5e5e5!important;
+    background-color: #e5e5e5!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #e5e5e5))!important;
+    background: -webkit-linear-gradient(top, #e5e5e5 0%, #e5e5e5 100%)!important;
+    background: -moz-linear-gradient(top, #e5e5e5 0%, #e5e5e5 100%)!important;
+    background: -ms-linear-gradient(top, #e5e5e5 0%, #e5e5e5 100%)!important;
+    background: -o-linear-gradient(top, #e5e5e5 0%, #e5e5e5 100%)!important;
+    background: linear-gradient(to bottom, #e5e5e5 0%, #e5e5e5 100%)!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: white !important;
+    border: 1px solid #777!important;
+    background-color: #777!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777), color-stop(100%, #777))!important;
+    background: -webkit-linear-gradient(top, #777 0%, #777 100%)!important;
+    background: -moz-linear-gradient(top, #777 0%, #777 100%)!important;
+    background: -ms-linear-gradient(top, #777 0%, #777 100%)!important;
+    background: -o-linear-gradient(top, #777 0%, #777 100%)!important;
+    background: linear-gradient(to bottom, #777 0%, #777 100%)!important;
+}
+

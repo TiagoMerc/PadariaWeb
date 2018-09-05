@@ -1,0 +1,9 @@
+Para testar, temos dois usuarios diferentes:
+
+-- Leonie, o Gerente
+CPF: 39976996455 
+Senha: 93255800
+
+--Javier, o Padeiro
+CPF: 16999428431
+Senha: 68859375

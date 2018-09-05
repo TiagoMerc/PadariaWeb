@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Vendas</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="clientes.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body class="row">
+        <div class=" col-md-3 gambi">    
+           <div class="conteinerMenu">
+            <table class="imgcontainer">
+                <tr>
+                    <td style="width: 30%"><img src="../Img/paoIcon.png" alt="logo" class="logo"></td>
+                    <td> <h3> Peter Pão </h3> </td>
+                </tr>
+               </table>
+             <div class="vertical-menu">
+                <a href="#" onclick="window.location.replace('home.html')"> <i class="fa fa-home" style="font-size:24px; padding-right:10px" ></i> Home </a>
+                <a href="#" onclick="window.location.replace('clientes.html')"> <i class="fa fa-users" style="font-size:24px; padding-right:10px"></i>   Clientes </a>
+                <a href="#" onclick="window.location.replace('encomendas.html')"><i class="fa fa-book"style="font-size:24px; padding-right:10px"></i>  Encomendas</a>
+                <a href="#"  class="active"  onclick="window.location.replace('vendas.html')"><i class="fa fa-shopping-basket"style="font-size:24px; padding-right:10px"></i>  Vendas </a> 
+                <a href="#" onclick="window.location.replace('estoque.html')"><i class="fa fa-archive"style="font-size:24px; padding-right:10px"></i>   Estoque</a> 
+                </div>
+               <div class="vertical-menuGerente" >
+                <a href="#" onclick="window.location.replace('funcionarios.html')"> <i class="fa fa-user" style="font-size:24px; padding-right:10px"></i>   Funcionários </a>
+                <a href="#"  onclick="window.location.replace('relatorio.html')"><i class="fa fa-clipboard"style="font-size:24px; padding-right:10px"></i>  Gerar Relatório</a>
+                </div>
+               <table id="rodape">
+                <tr>
+                    <td> Capitão Gancho</td>
+
+                </tr>
+                <tr>
+                    <td> Tipo: Funcionário</td>
+                </tr>
+                <tr>
+                    <td> Data: <script language=javascript type="text/javascript">
+                   now = new Date
+                   document.write (now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() )
+               </script></td>
+                     <td style="text-align: right"> <button class="botaoSair" onclick="window.location.replace('login.html')"><i class="fa fa-sign-out"style="font-size:40 px; padding-right:10px"></i>Sair </button></td>
+                </tr>   
+               </table> 
+
+              <!-- <input type="image" src="exit.png" name="exitButton" class="exitB" alt="Submit" width="20%" height="auto">-->
+            </div>
+        
+        </div>
+            <div class="col-md-9  gambi">
+                <div class="conteiner" style="background-image: url('../Img/shopping-basket.png')">
+                <h2>Vendas</h2>
+                    <div class="conteudo">
+                       <table id="menuTabela">
+                            <tr>
+                                <td id="consul" class="botao active"> <a href="#" onclick="change('consultar')"> Consultar</a></td>
+                                <td rowspan="7" style = "width: 100%"> 
+                                    <div id="consultar">
+                                        <div class="busca">
+                                          <input type="text" placeholder="buscar por.." maxlength="50" name="search">
+                                          <select id="buscaOp" name="buscaOp">
+                                          <option value="text">Data</option>
+                                          <option value="text"></option>
+                                          <option value="text"></option>
+                                        </select>
+                                        </div>
+                                        <table id="tabelaConsultar">
+                                          <tr>
+                                            <th>Código</th>  
+                                            <th>CPF Funcionário</th>  
+                                            <th>Data</th>
+                                            <th>Preço Total</th> 
+                                            <th>Produtos</th>  
+                                          </tr>
+                                          <tr>
+                                            <td>123</td>
+                                            <td>098.123.546-42</td>
+                                            <td>01/05/2018</td>
+                                            <td>R$ 45,00</td>    
+                                            <td> <button class= "prod" data-toggle="collapse" data-target="#listaProd"> <i class="fa fa-chevron-circle-down"style="color:green; font-size: 15pt"></i> </button>
+                                            </td> 
+                                          </tr>
+                                            <tr id="listaProd" class="collapse">
+                                                <td colspan="5"> <table class="produtos">
+                                                    <tr>
+                                                        <td><b>Código</b></td>
+                                                        <td><b>Nome</b></td>
+                                                        <td><b>Quantidade</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Pão Francês</td>
+                                                        <td>30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>39</td>
+                                                        <td>Torta de Pêssego</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                </table></td>
+                                            </tr>  
+                                          <tr>
+                                            <td>124</td>
+                                            <td>038.456.234-78</td>
+                                            <td>01/05/2018</td>
+                                            <td>R$ 170,00</td>  
+                                            <td> <button class= "prod" data-toggle="collapse" data-target="#listaProd"> <i class="fa fa-chevron-circle-down"style="color:green; font-size: 15pt"></i> </button></td>     
+                                          </tr>
+                                             <tr>
+                                            <td>125</td>     
+                                            <td>458.467.908-00</td>
+                                            <td>01/05/2018</td>
+                                            <td>R$ 370,00</td> 
+                                            <td> <button class= "prod" data-toggle="collapse" data-target="#listaProd"> <i class="fa fa-chevron-circle-down"style="color:green; font-size: 15pt"></i> </button></td>        
+                                          </tr>
+                                            <tr>
+                                            <td>126</td>     
+                                            <td>458.467.908-00</td>
+                                            <td>01/05/2018</td>
+                                            <td>R$ 370,00</td> 
+                                            <td> <button class= "prod" data-toggle="collapse" data-target="#listaProd"> <i class="fa fa-chevron-circle-down"style="color:green; font-size: 15pt"></i> </button></td>        
+                                          </tr>    
+                                        </table>
+                                    </div>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td class="botao" style= "visibility: hidden;"><a></a> </td>
+                               
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a> </td>
+                           </tr>
+                           <tr>
+                               <td class="botao" style= "visibility: hidden;"><a></a> </td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a> </td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a> </td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a> </td>
+                           </tr>
+                        </table>
+                    </div>
+                </div>   
+            </div>
+    </body>
+</html>

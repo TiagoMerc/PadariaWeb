@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/login.css">
+      <!--  <script type="text/javascript" src="login.js"></script>-->
+    </head>
+    <body>
+        
+       <h1> Peter Pão </h1>
+        <div class="imgcontainer">
+            <img src="../Img/paoIcon.png" alt="Avatar" class="avatar">
+        </div>
+        <form>
+          <div class="containerBox">
+            <label for="cpf"><b>CPF</b></label>
+            <input type="text" placeholder="xxx.xxx.xxx-xx" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required autofocus >
+
+            <label for="senha"><b>Senha</b></label>
+            <input type="password" placeholder="Senha" name="senha" required>
+
+           <button type="submit" onclick="check(this.form)">Login</button>
+              <!--<input type="button" onclick="check(this.form)" value="Login">-->
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+          <div class="containerBox" >
+            <button type="button" class="cancelbtn">Limpar</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+        <script language="javascript" type="text/javascript">
+            function check(form){
+                if(form.cpf.value == "000.000.000-00" && form.senha.value == "1234"){
+                   window.open('home.html')/*opens the target page while Id & password matches*/
+                  } else {
+                   alert("Erro! Verifique se o CPF e a senha foram digitadas corretamente")/*displays error message*/
+                  }
+                }
+        </script>
+    </body>
+</html>
