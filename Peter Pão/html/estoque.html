@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Estoque</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="clientes.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body class="row">
+        <div class=" col-md-3 gambi">    
+           <div class="conteinerMenu">
+            <table class="imgcontainer">
+                <tr>
+                    <td style="width: 30%"><img src="../Img/paoIcon.png" alt="logo" class="logo"></td>
+                    <td> <h3> Peter Pão </h3> </td>
+                </tr>
+               </table>
+             <div class="vertical-menu">
+                <a href="#" onclick="window.location.replace('home.html')"> <i class="fa fa-home" style="font-size:24px; padding-right:10px" ></i> Home </a>
+                <a href="#" onclick="window.location.replace('clientes.html')"> <i class="fa fa-users" style="font-size:24px; padding-right:10px"></i>   Clientes </a>
+                <a href="#" onclick="window.location.replace('encomendas.html')"><i class="fa fa-book"style="font-size:24px; padding-right:10px"></i>  Encomendas</a>
+                <a href="#" onclick="window.location.replace('vendas.html')"><i class="fa fa-shopping-basket"style="font-size:24px; padding-right:10px"></i>  Vendas</a> 
+                <a href="#" class="active" onclick="window.location.replace('estoque.html')"><i class="fa fa-archive"style="font-size:24px; padding-right:10px"></i>   Estoque</a> 
+                </div>
+               <div class="vertical-menuGerente" >
+                <a href="#" onclick="window.location.replace('funcionarios.html')"> <i class="fa fa-user" style="font-size:24px; padding-right:10px"></i>   Funcionários </a>
+                <a href="#"  onclick="window.location.replace('relatorio.html')"><i class="fa fa-clipboard"style="font-size:24px; padding-right:10px"></i>  Gerar Relatório</a>
+                </div>
+               <table id="rodape">
+                <tr>
+                    <td> Capitão Gancho</td>
+
+                </tr>
+                <tr>
+                    <td> Tipo: Funcionário</td>
+                </tr>
+                <tr>
+                    <td> Data: <script language=javascript type="text/javascript">
+                   now = new Date
+                   document.write (now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() )
+               </script></td>
+                     <td style="text-align: right"> <button class="botaoSair" onclick="window.location.replace('login.html')"><i class="fa fa-sign-out"style="font-size:40 px; padding-right:10px"></i>Sair </button></td>
+                </tr>   
+               </table> 
+
+              <!-- <input type="image" src="exit.png" name="exitButton" class="exitB" alt="Submit" width="20%" height="auto">-->
+            </div>
+        <script>
+            function change(x){
+               if(x === "consultar"){
+                   document.getElementById("consultar").style.display = 'block';
+                   document.getElementById("adicionar").style.display = 'none';
+                   document.getElementById("producao").style.display = 'none';
+                   document.getElementById("alterar").style.display = 'none';
+                   document.getElementById("consul").className = "botao active";
+                   document.getElementById("add").className = "botao";
+                   document.getElementById("botaoProduzido").className = "botao";
+                   
+                }else if(x === "adicionar"){
+                    document.getElementById("adicionar").style.display = 'block';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("producao").style.display = 'none';
+                    document.getElementById("alterar").style.display = 'none';
+                    document.getElementById("consul").className = "botao";
+                    document.getElementById("botaoProduzido").className = "botao";
+                   document.getElementById("add").className = "botao active";
+                }else if(x === "alterar"){
+                    document.getElementById("alterar").style.display = 'block';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("adicionar").style.display = 'none';
+                    document.getElementById("producao").style.display = 'none';
+                }else if(x === "producao"){
+                    document.getElementById("adicionar").style.display = 'none';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("producao").style.display = 'block';
+                    document.getElementById("alterar").style.display = 'none';
+                    document.getElementById("consul").className = "botao";
+                    document.getElementById("add").className = "botao";
+                    document.getElementById("botaoProduzido").className = "botao active";
+                }
+                
+            }
+            </script>
+            <script>
+                function modal(){
+                    document.getElementById("addEstoque").style.display = "block";
+                }
+                function Myclose(){
+                     document.getElementById("addEstoque").style.display = "none";
+                }
+                 window.onclick = function(event) {
+                    if (event.target == document.getElementById('addEstoque')) {
+                        document.getElementById('addEstoque').style.display = "none";
+                    }
+                }
+                </script>
+        </div>
+            <div class="col-md-9  gambi">
+                <div class="conteiner" style="background-image: url('../Img/croissant.png');">
+                <h2>Estoque</h2>
+                    <div class="conteudo">
+                       <table id="menuTabela">
+                            <tr>
+                                <td id="consul" class="botao active"> <a href="#" onclick="change('consultar')"> Consultar</a></td>
+                                <td rowspan="7" style = "width: 100%"> 
+                                    <div id="consultar">
+                                        <div class="busca">
+                                          <input type="text" placeholder="buscar por.." maxlength="50" name="search">
+                                          <select id="buscaOp" name="buscaOp">
+                                          <option value="text">Código</option>
+                                          <option value="text">Nome</option>
+                                          <option value="text">Categoria</option>
+                                        </select>
+                                        </div>
+                                        <table id="tabelaConsultar">
+                                          <tr>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Quantidade</th>
+                                            <th>Categoria</th>  
+                                            <th>Preço Unitário</th> 
+                                            <th>Add</th>  
+                                            <th></th> 
+                                          </tr>
+                                          <tr>
+                                            <td>1</td>
+                                            <td>Pão Francês</td>
+                                            <td>300</td>
+                                            <td>Pão</td>  
+                                            <td>0,50</td>
+                                            <td> <button class= "plus" type="plus" id="plus" onclick="modal()"><i class="fa fa-plus" style="font-size:20px"></i></button></td>  
+                                            <td> <button class= "edit" type="edit" onclick="change('alterar')"> <i class="material-icons" style="color:white; font-size: 10pt">edit</i> </button></td>  
+                                          </tr>
+                                          <tr>
+                                            <td>22</td>
+                                            <td>Leite</td>                          
+                                            <td>50</td>
+                                            <td>Bebida</td>  
+                                            <td>3,50</td>
+                                            <td> <button class= "plus" type="plus" onclick="modal()"><i class="fa fa-plus" style="font-size:20px"></i></button></td>  
+                                            <td> <button class= "edit" type="edit" onclick="change('alterar')"> <i class="material-icons" style="color:white; font-size: 10pt;">edit</i> </button></td>    
+                                          </tr>
+                                             <tr>
+                                            <td>34</td>
+                                            <td>Torta de Maçã</td>                             
+                                            <td>10</td>
+                                            <td>Torta</td>     
+                                            <td>20,00</td> 
+                                            <td> <button class="plus" type="plus" onclick="modal()"><i class="fa fa-plus" style="font-size:20px"></i></button></td>     
+                                            <td> <button class= "edit" type="edit"onclick="change('alterar')"> <i class="material-icons" style="color:white; font-size: 10pt;">edit</i> </button></td>       
+                                          </tr>
+                                        </table>
+                                    </div>
+                                    <div id="adicionar">
+                                        <form>
+                                             <div class="containerBox">
+                                                 <table id="formulario">
+                                                    <tr>
+                                                     <td>
+                                                        <label for="Nome" class="titulo"><b>    Nome </b></label>
+                                                        <input type="text" placeholder="Nome" name="nome" maxlength="50" required autofocus >
+                                                        </td>
+                                                    <td>
+                                                        <label for="categoria" class="titulo"> <b>   Categoria    </b></label>
+                                                        <select id="setCargo" name="setCargo">
+                                                          <option value="text">Pães</option>
+                                                          <option value="text">Tortas</option>
+                                                          <option value="text">Bolos</option>
+                                                          <option value="text">Doces</option>
+                                                          <option value="text">Babidas</option>
+                                                          <option value="text">Ingredientes</option>
+                                                        </select>
+                                                    </td>    
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td>
+                                                         <label for="quant" class="titulo"><b>  Quantidade  </b></label>
+                                                        <input type="number" placeholder="xxx" name="quanti" title="Apenas números" required>
+                                                         </td>
+                                                         <td>
+                                                             <label for="preco" class="titulo"> <b>  Preço Unitário    </b></label>
+                                                             <input type="number" placeholder="xxxx,xx" required>                       
+                                                         </td>
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td colspan="2" >
+                                                            <label for="desc" class="titulo"> <b>  Descrição  </b></label>
+                                                            <input type="text" placeholder="descrição" maxlength="300">
+                                                         </td>
+                                                     </tr>
+                                                 </table>
+                                              </div>
+                                            <div class="botoes" style="margin-top: 10%">
+                                                <button type="reset" class="cancelbtn">Limpar</button>
+                                                <button type="submit">Adicionar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="alterar">
+                                        <h3>Alterar Dados</h3>
+                                        <form>
+                                             <div class="containerBox">
+                                                 <table id="formulario">
+                                                     <tr>
+                                                     <td>
+                                                        <label for="Nome" class="titulo"><b>    Nome </b></label>
+                                                        <input type="text" placeholder="Nome" name="nome" maxlength="50" required autofocus >
+                                                        </td>
+                                                    <td>
+                                                        <label for="categoria" class="titulo"> <b>   Categoria    </b></label>
+                                                        <select id="setCargo" name="setCargo">
+                                                          <option value="text">Pães</option>
+                                                          <option value="text">Tortas</option>
+                                                          <option value="text">Bolos</option>
+                                                          <option value="text">Doces</option>
+                                                          <option value="text">Babidas</option>
+                                                          <option value="text">Ingredientes</option>
+                                                        </select>
+                                                    </td>    
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td>
+                                                         <label for="quant" class="titulo"><b>  Quantidade  </b></label>
+                                                        <input type="number" placeholder="xxx" name="quanti" required>
+                                                         </td>
+                                                         <td>
+                                                             <label for="preco" class="titulo"> <b>  Preço Unitário    </b></label>
+                                                             <input type="number" placeholder="xxxx,xx" required>                       
+                                                         </td>
+                                                     </tr>
+                                                     
+                                                     <tr>
+                                                        <td colspan="2" >
+                                                            <label for="desc" class="titulo"> <b>  Descrição  </b></label>
+                                                            <input type="text" placeholder="descrição" maxlength="300">
+                                                         </td>
+                                                     </tr>
+                                                 </table>
+                                              </div>
+                                            <div class="botoes" style="margin-top: 6%">
+                                                <button type="voltar" class="voltar" onclick="change('consultar')"><i class="material-icons" style="color:white; font-size: 30pt">keyboard_return</i></button>
+                                                <button type="submit">Confirmar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="producao">
+                                        <div class="busca">
+                                          <input type="text" placeholder="buscar por.." maxlength="50" name="search">
+                                          <select id="buscaOp" name="buscaOp">
+                                          <option value="text">data</option>
+                                          <option value="text">código</option>
+                                          <option value="text">nome</option>
+                                        <option value="text">CPF Funcio</option>      
+                                        </select>
+                                        </div>
+                                        <table id="tabelaConsultar">
+                                          <tr>
+                                            <th>CPF do Funcionário</th>  
+                                            <th>Data</th>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Quantidade</th>  
+                                          </tr>
+                                          <tr>
+                                            <td>123.321.222-13</td>  
+                                            <td>14/5/2018</td>
+                                            <td>1</td>
+                                            <td>Pão Francês</td> 
+                                            <td>100</td>  
+                                          </tr>
+                                          <tr>
+                                            <td>987.765.543-12</td>  
+                                            <td>14/5/2018</td>
+                                            <td>27</td>
+                                            <td>Pão Doce</td> 
+                                            <td>20</td>    
+                                          </tr>
+                                             <tr>
+                                            <td>876.532.456-33</td>     
+                                            <td>14/5/2018</td>
+                                            <td>7</td>
+                                            <td>Pão de Queijo</td> 
+                                            <td>20</td>      
+                                          </tr>
+                                        </table>
+                                    </div>
+                                    <div id="addEstoque" class="addEstoque">
+                                        <div class="coisoAdd" id="coiso">
+                                            <button class="close" onclick="Myclose()"><i class="fa fa-close" style="font-size:24px;color:red"></i></button>
+                                            <label for="quant" class="titulo"><b>  Quantidade a ser adicionada </b></label>
+                                            <input type="number" placeholder="xxx" name="quanti" required>
+                                            <button type="submit">Adicionar</button>
+                                            <label id="checkProd">
+                                              <input type="checkbox" checked="checked" name="prod">Produzido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td id="add" class="botao" style="text-align: center"> <a href="#" onclick="change('adicionar')"> Adicionar (Novo)</a></td>
+                           </tr>
+                           <tr>
+                               <td id="botaoProduzido" class="botao" style="text-align: center"> <a href="#" onclick="change('producao')"> Produção </a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                        </table>
+                    </div>
+                </div>   
+            </div>
+    </body>
+</html>

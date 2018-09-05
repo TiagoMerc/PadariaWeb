@@ -1,0 +1,13 @@
+Professor Wesley, no trabalho apresentamos duas formas de login, ambas com mesmo front e representando o index, mas preferimos distinguí-las a própóstito de já apresentar como faremos o backend (inspirado no exemplo que nos passou).
+- Decidimos usar php
+
+Sobre o trabalho a ser entregue (Casca de Ovo e Relatório):
+- O banco de dados simplificado para teste encontra-se na pasta BD
+- Todas as outras páginas (menos a login.php e conexao.php) são HTML e JS, sem backend
+- Todas as páginas, inclusive as PHP, estão na pasta HTML
+- As páginas referentes ao Gerente (Funcionários e Gerar Relatórios), terão o acesso tratado com backend através do campo Cargo (no BD e sessão, ainda não foi feito)
+
+- Panfleto, a parte bônus, encontra-se em uma pasta própria (Todo seu conteúdo estará lá)
+- O arquivo "format.html" na pasta raiz possui parte dos nosso métodos que tratam campos como cpf
+
+Aprimeira página é a de login.html, utilize o cpf = 000.000.000-00 e a senha = 1234

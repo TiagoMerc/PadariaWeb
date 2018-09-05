@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<title>Peter Pão</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="panfleto.css" rel="stylesheet">
+    <link href="panfleto.js">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav id = "nb" class="navbar navbar-default navbar">
+  <div id = "container-navbar" class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class = "navbar-brand">
+            <h3>Peter Pão <img src="paoIcon.png" class="logo" width="60">
+            </h3>
+        </a>
+    </div>
+   <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="panfleto.html">Home</a></li>
+        <li><a href="historia.html">Nossa História</a></li>
+        <li><a href="produto.html">Nossos Produtos</a></li>
+        <li><a href="chegar.html">Como Chegar</a></li>
+        <li class="active"><a href="fale.html">Fale Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="container-faleconosco" class="container">
+  <h2>Escreva para nós</h2>
+  <p>Envie sua dúvida, crítica, sugestão ou elogio que a Peter Pão atenderá você o mais rápido possível!</p>
+  <form>
+    <div class="form-group">
+      <label>Nome:</label>
+      <input type="text" class="form-control" id="name" required autofocus>
+    </div>
+    <div class="form-group">
+      <label>E-mail:</label>
+      <input type="email" class="form-control" id="email" required autofocus>
+    </div>
+    <div class="form-group">
+      <label>Escreva sua mensagem:</label>
+      <textarea class="form-control" rows="10" id="msg" required autofocus></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>
+<!--Footer-->
+<footer class="page-footer">
+    <div id="container-footer" class="container-fluid text-center">
+        <div class="row">
+                <img class=logo src="paoIcon.png" width="60" alt="logo">
+                <p><b>Unidade 1:</b> Rua J. M. Barrie, 42. Neverland.
+                <br/>
+                    <b>Unidade 2:</b> Rua The Little White Bird, 12. Disneyland.
+                <br/>
+                    <b>Unidade 3:</b> Rua The Boy Who Wouldn’t Grow, 132. Pirate Ship.
+                <br/>
+                    <b>Unidade 4:</b> Avenida Once Upon a Time, 1289. Dreamland.
+                <br/>
+                    <b>Unidade 5:</b>  Kensington Gardens, 901. Orlando.
+                </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- INSTRUÇÕES
+
+    NOS CAMPOS DE INPUT:
+    -Recomendável usar id nos campos para getElementById e porque em PHP usa-se ID
+    -pattern é o campo de expressão regular que faz a verificação
+    -title é o título daquele campo e, quando o input não obece à expressão, é o texto que aparece no lugar do texto padrão
+    - max lenght é muito útil e acho que o próprio nome já diz o que é
+    - usei oninput pra chamada dos métodos porque assim cada caracter entrado já é analisado (independente do tempo de pressionar a tecla, que é o que acontece com keyup)
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Home</title>
+        <meta charset="utf-8">
+    </head>
+    <body class="row">
+        <form method="POST">
+            <label for="cpf"><b>CPF</b></label>
+            <input type="text"  id="cpf" oninput="cpf_replace(this.form.cpf.value,'cpf')" placeholder="xxx.xxx.xxx-xx" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="CPF tem 11 dígitos (Digite apenas números)" maxlenght="15" required autofocus >
+
+            <label for="nome"><b>Nome</b></label>
+            <input type="text" placeholder="Nome" id="nome" maxlength="50" required>
+
+            <label for="tel"> <b>Telefone</b></label>
+            <input type="tel" placeholder="(xx)xxxx-xxxx" maxlength="14" id="tel" oninput="tel_replace(this.form.tel.value),'tel'" pattern="\([1-9]{2}\)[0-9]{4,5}-[0-9]{4}" title = "Telefone tem DDD + 8 ou 9 dígitos (Digite apenas números)" required>
+
+            <label for="cep"> <b>CEP</b></label>
+            <input type="text" placeholder="xxxxx-xxx" maxlength="9" id="cep" oninput="cep_replace(this.form.cep.value,'cep')" pattern="\d{5}-\d{3}" title = "CEP tem 8 dígitos (Digite apenas números)" required>
+
+            <label for="endereco"> <b>Endereço</b></label>
+            <input type="text" placeholder="Rua" id="rua" maxlength="100" required>
+
+            <label for="num"> <b>Número</b></label>
+            <input type="text" placeholder="numero + complemento" id="num/comp" maxlength="30" required>
+
+            <button type="submit">Adicionar</button>
+            <button type="button" class="cancelbtn">Limpar</button>
+        </form>                                  
+    </body>
+</html>
+
+<script>
+    function cpf_replace(pCpf, id_form){
+        var cpf = pCpf.toString()
+
+        cpf = cpf.replace(/[\W\s\._\-]+/g, ''); //para retirar caracteres especiais
+        cpf = cpf.replace(/[A-z.]+/, ''); //para retirar letras
+
+        //vetor que recebera cada parte do cpf
+        var tokens = [];
+
+        //tamanho atual do input
+        var tamanho = cpf.length;
+
+        //retirar cada parte do cpf
+        for(var i = 0; (i < tamanho) && (i < 9); i+= 3){
+            tokens.push(cpf.substr(i, 3));
+        }
+
+        //processo de inserção e pontos e traços
+        if(tamanho > 9){
+            var que = cpf.substr(i, 2);
+            cpf = tokens.join(".");
+            cpf = cpf + "-" + que;
+        }else{
+            cpf = tokens.join(".");
+        }
+
+        //substitui no input
+        document.getElementById(id_form).value = cpf
+    }
+    
+    function tel_replace(pTel, id_form){
+        var tel = pTel.toString()
+
+        tel = tel.replace(/[\W\s\._\-]+/g, ''); //para retirar caracteres especiais
+        tel = tel.replace(/[A-z.]+/, ''); //para retirar letras
+
+        //vetor que recebera cada parte do telefone
+        var tokens = [];
+
+        //tamanho atual do input
+        var tamanho = tel.length;
+        
+        if(tamanho > 2){
+            var ddd = tel.substr(0, 2); //ddd
+            var parte; //define o tamanho da parte para número de 8 ou 9 dígitos
+            
+            if(tamanho < 11){
+                parte = 4;
+            }else{
+                parte = 5;
+            }
+            
+            //retirar cada parte do telefone
+            for(var i = 2; (i < tamanho) && (i < 10); i+= parte){
+                tokens.push(tel.substr(i, parte));
+                parte = 4;
+            }
+            
+            //junção
+            tel = "(" + ddd + ")" + tokens.join("-");
+        }
+
+        //substitui no input
+        document.getElementById(id_form).value = tel
+    }
+    
+    function cep_replace(pCep, id_form){
+        var cep = pCep.toString()
+
+        cep = cep.replace(/[\W\s\._\-]+/g, ''); //para retirar caracteres especiais
+        cep = cep.replace(/[A-z.]+/, ''); //para retirar letras
+
+        //tamanho atual do input
+        var tamanho = cep.length;
+        
+        //tratamento cep
+        if(tamanho > 5){
+            var tokens = [];
+            tokens.push(cep.substr(0, 5));
+            tokens.push(cep.substr(5, 3));
+            cep = tokens.join("-");
+        }
+
+        //substitui no input
+        document.getElementById(id_form).value = cep
+    }
+</script>

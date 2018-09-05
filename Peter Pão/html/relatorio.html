@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Peter Pão Gerar Relatorio</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="clientes.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body class="row">
+        <div class=" col-md-3 gambi">    
+           <div class="conteinerMenu">
+            <table class="imgcontainer">
+                <tr>
+                    <td style="width: 30%"><img src="../Img/paoIcon.png" alt="logo" class="logo"></td>
+                    <td> <h3> Peter Pão </h3> </td>
+                </tr>
+               </table>
+             <div class="vertical-menu">
+                <a href="#" onclick="window.location.replace('home.html')"> <i class="fa fa-home" style="font-size:24px; padding-right:10px" ></i> Home </a>
+                <a href="#" onclick="window.location.replace('clientes.html')"> <i class="fa fa-users" style="font-size:24px; padding-right:10px"></i>   Clientes </a>
+                <a href="#" onclick="window.location.replace('encomendas.html')"><i class="fa fa-book"style="font-size:24px; padding-right:10px"></i>  Encomendas</a>
+                <a href="#" onclick="window.location.replace('vendas.html')"><i class="fa fa-shopping-basket"style="font-size:24px; padding-right:10px"></i>  Vendas</a> 
+                <a href="#" onclick="window.location.replace('estoque.html')"><i class="fa fa-archive"style="font-size:24px; padding-right:10px"></i>   Estoque</a> 
+                </div>
+               <div class="vertical-menuGerente">
+                <a href="#" onclick="window.location.replace('funcionarios.html')"> <i class="fa fa-user" style="font-size:24px; padding-right:10px"></i>   Funcionários </a>
+                <a href="#"  class ="active" onclick="window.location.replace('relatorio.html')"><i class="fa fa-clipboard"style="font-size:24px; padding-right:10px"></i>  Gerar Relatório</a>
+                </div>
+               <table id="rodape">
+                <tr>
+                    <td> Capitão Gancho</td>
+
+                </tr>
+                <tr>
+                    <td> Tipo: Funcionário</td>
+                </tr>
+                <tr>
+                    <td> Data: <script language=javascript type="text/javascript">
+                   now = new Date
+                   document.write (now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() )
+               </script></td>
+                     <td style="text-align: right"> <button class="botaoSair" onclick="window.location.replace('login.html')"><i class="fa fa-sign-out"style="font-size:40 px; padding-right:10px"></i>Sair </button></td>
+                </tr>   
+               </table> 
+
+              <!-- <input type="image" src="exit.png" name="exitButton" class="exitB" alt="Submit" width="20%" height="auto">-->
+            </div>
+        <script>
+            function change(x){
+               if(x === "consultar"){
+                   document.getElementById("consultar").style.display = 'block';
+                   document.getElementById("adicionar2").style.display = 'none';
+                   document.getElementById("alterar").style.display = 'none';
+                   document.getElementById("consul").className = "botao active";
+                   document.getElementById("add").className = "botao";
+                   
+                }else if(x === "adicionar"){
+                    document.getElementById("adicionar2").style.display = 'block';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("alterar").style.display = 'none';
+                    document.getElementById("consul").className = "botao";
+                    document.getElementById("alt").className = "botao";
+                   document.getElementById("add").className = "botao active";
+                }else if(x === "alterar"){
+                    document.getElementById("alterar").style.display = 'block';
+                    document.getElementById("consultar").style.display = 'none';
+                    document.getElementById("adicionar2").style.display = 'none';
+                    document.getElementById("consul").className = "botao";
+                   document.getElementById("alt").className = "botao active";
+                    document.getElementById("add").className = "botao";
+                }
+                
+            }
+            </script>
+        </div>
+            <div class="col-md-9  gambi">
+                <div class="conteiner" style="background-image: url('../Img/report.png');">
+                <h2>Gerar Relatório</h2>
+                    <div class="conteudo">
+                       <table id="menuTabela">
+                            <tr>
+                                <td id="consul" class="botao active"> <a href="#" onclick="change('consultar')" style="text-align: center"> Produto por venda</a></td>
+                                <td rowspan="7" style = "width: 100%"> 
+                                    <div id="consultar">
+                                        <h3> Quantidade Vendida no Intervalo:</h3>
+                                        <form class="busca" style="white-space: nowrap">
+                                          <input type="text" placeholder="buscar produto por.." maxlength="50" name="search" required>
+                                          <select id="buscaOp" name="buscaOp">
+                                          <option value="text">Código</option>
+                                          <option value="text">Nome</option>
+                                          <option value="text">Categoria</option>
+                                        </select>
+                                        <label for="pordataDe" class="titulo"> De:</label>    
+                                        <input type="date" placeholder="dd/mm/aaaa" name="pordata">
+                                        <label for="pordataate" class="titulo"> Até:</label>    
+                                        <input type="date" placeholder="dd/mm/aaaa" name="pordataate">
+                                        <button type="submit" class="treco">Buscar</button>      
+                                        </form>
+                                        <table id="tabelaConsultar">
+                                          <tr>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Quantidade no Estoque</th>
+                                            <th>Categoria</th>
+                                            <th>Descrição</th>  
+                                            <th>Preço Unitário</th>
+                                            <th>Quantidade Vendida</th>  
+                                          </tr>
+                                          <tr>
+                                            <td>1</td>
+                                            <td>Pão Francês</td>
+                                            <td>50</td>
+                                            <td>Pão</td>
+                                            <td>Contém glutém</td>  
+                                            <td>0,50</td>
+                                            <td>2345690</td>  
+                                          </tr>
+                                          <tr>
+                                            <td>3</td>
+                                            <td>Pão Integral</td>                          
+                                            <td>10</td>
+                                            <td>Pão</td> 
+                                            <td>Contém glutém</td>
+                                            <td>0,90</td>
+                                            <td>8730</td>  
+                                          </tr>
+                                             <tr>
+                                            <td>6</td>
+                                            <td>Pão de Caseiro</td>                             
+                                            <td>4</td>
+                                            <td>Pão</td> 
+                                            <td>Contém glutém, lactose</td>
+                                            <td> 5,00</td>
+                                            <td>1200</td>     
+                                          </tr>
+                                        </table>
+                                    </div>
+                                     <div id="adicionar2">
+                                        <h3> Quantidade Produzida no Intervalo:</h3>
+                                        <form class="busca">
+                                          <input type="text" placeholder="buscar produto por.." maxlength="50" name="search" required>
+                                          <select id="buscaOp" name="buscaOp">
+                                          <option value="text">Código</option>
+                                          <option value="text">Nome</option>
+                                          <option value="text">Categoria</option>
+                                        </select>
+                                        <label for="pordataDe" class="titulo"> De:</label>    
+                                        <input type="date" placeholder="dd/mm/aaaa" name="pordata">
+                                        <label for="pordataate" class="titulo"> Até:</label>    
+                                        <input type="date" placeholder="dd/mm/aaaa" name="pordataate">
+                                        <button type="submit" class="treco">Buscar</button>    
+                                        </form>
+                                        <table id="tabelaProducao">
+                                          <tr>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Quantidade no Estoque</th>
+                                            <th>Categoria</th>
+                                            <th>Descrição</th>  
+                                            <th>Preço Unitário</th>
+                                            <th>Quantidade Produzida</th>  
+                                          </tr>
+                                          <tr>
+                                            <td>30</td>
+                                            <td>Torta de Maçã</td>
+                                            <td>3</td>
+                                            <td>Torta</td>
+                                            <td>Contém glutém, lactose</td>  
+                                            <td>10,00</td>
+                                            <td>100</td>  
+                                          </tr>
+                                          <tr>
+                                            <td>34</td>
+                                            <td>Torta de Morango</td>                          
+                                            <td>8</td>
+                                            <td>Torta</td> 
+                                            <td>Contém glutém, lactose</td>
+                                            <td>20,00</td>
+                                            <td>300</td>  
+                                          </tr>
+                                             <tr>
+                                            <td>39</td>
+                                            <td>Torta de Pêssego</td>                             
+                                            <td>4</td>
+                                            <td>Torta</td> 
+                                            <td>Contém glutém, lactose</td>
+                                            <td> 16,00</td>
+                                            <td>130</td>     
+                                          </tr>
+                                        </table>
+                                    </div>
+                                    <div id="alterar">
+                                        <h3>Gerar Ralatórios do Intervalo: </h3>
+                                            <table id="relatorio">
+                                        <tr>
+                                            <td> 
+                                                <label for="pordataDe" class="titulo"> De:</label>    
+                                                <input type="date" placeholder="dd/mm/aaaa" name="pordata">
+                                            </td>
+                                            <td>
+                                                <label for="pordataate" class="titulo"> Até:</label>    
+                                                <input type="date" placeholder="dd/mm/aaaa" name="pordataate">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><button type="button" class="botaoRelatorio">Relatório de Vendas <i class="material-icons" style="font-size:24px; vertical-align: bottom; margin: 0 0 0 10px">picture_as_pdf</i></button></td> 
+                                            <td><button type="button" class="botaoRelatorio">Relatório de Produção <i class="material-icons" style="font-size:24px; vertical-align: bottom; margin: 0 0 0 10px">picture_as_pdf</i></button></td> 
+                                        </tr>
+                                        <tr> 
+                                            <td colspan="2"><button type="button" class="botaoRelatorio" style="background-color: #ff8600; font-size: 15pt"><b>Relatório Geral </b><i class="material-icons" style="font-size:24px; vertical-align: bottom; margin: 0 0 0 10px">picture_as_pdf</i></button></td>       
+                                        </tr>        
+                                        </table>
+                                    </div>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td id="add" class="botao"> <a href="#" onclick="change('adicionar')" style="text-align: center"> Produto por Produção</a> </td>
+                           </tr>
+                           <tr>
+                               <td id="alt"class="botao"> <a href="#" onclick="change('alterar')" style="text-align: center"> Gerar Relatórios </a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                           <tr>
+                               <td class="botao"style= "visibility: hidden;"><a></a></td>
+                           </tr>
+                          
+                        </table>
+                    </div>
+                </div>   
+            </div>
+    </body>
+</html>
